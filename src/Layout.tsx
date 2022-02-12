@@ -24,8 +24,7 @@ const PUBLIC_PAGES = [
 function Layout() {
   const location = useLocation();
   const navigate = useNavigate();
-  //const { setPermissions } = useGlobalState();
-  
+
   const [loading, setLoading] = useState(false);
 
   const publicPath = PUBLIC_PAGES.includes(location.pathname);
@@ -37,11 +36,10 @@ function Layout() {
       const account = await fetch('auth/current-account');
       if (account) {
         setCurrentAccount(account);
-        
-        /*const permissions = await fetch('auth/permissions');
-        setPermissions(permissions);  */
-    
-        if (publicPath) {
+
+        if (account.requireMfa) {
+          navigate('/two-factor');
+        } else if (publicPath) {
           navigate('/mailbox');
         }
       } else {
