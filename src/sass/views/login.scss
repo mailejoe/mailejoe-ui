@@ -1,0 +1,188 @@
+.auth {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .grid-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+
+    > div {
+      width: 100%;
+    }
+
+    .field {
+      width: 100%;
+      height: 50px;
+      border: 1px solid #e1e1e1;
+      font-size: 1.1rem;
+      padding-left: 15px;
+      font-family: "Source Sans Pro", sans-serif;
+      border-radius: 4px;
+      font-weight: 500;
+      padding: 0.55em;
+      outline: none;
+      color: #000;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+
+      &.password {
+        font-size: 1.1rem;
+        -webkit-text-security: square;
+      }
+
+      &.has-error {
+        margin-bottom: 0px;
+        border: 2px solid rgba(255, 0, 0, 0.8);
+      }
+
+      &.slide-in {
+        margin-left: -1200px;
+        -webkit-animation: slide 0.5s forwards;
+        -webkit-animation-delay: 0.2s;
+        animation: slide 0.5s forwards;
+        animation-delay: 0.2s;
+      }
+
+      @-webkit-keyframes slide {
+        100% {
+          margin-left: 0;
+        }
+      }
+
+      @keyframes slide {
+        100% {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+
+    .button {
+      width: 100%;
+      margin: 15px 0;
+      height: 35px;
+      font-family: "Source Sans Pro", sans-serif;
+      font-weight: bold;
+      background-color: #e1b038;
+      color: #ffffff;
+      font-size: 1.1rem;
+    }
+  }
+
+  .divider {
+    border-top: 1px solid #cccccc;
+  }
+
+  .form-error {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffe268;
+    margin-bottom: 10px;
+  }
+
+  .form-extra {
+    font-weight: 600;
+    margin-top: 5px;
+    color: #0a84ff;
+    font-size: 1.1rem;
+    text-transform: none;
+    font-family: "Source Sans Pro", sans-serif;
+  }
+
+  .extra-link {
+    font-family: "Source Sans Pro", sans-serif;
+    color: #ffb037;
+    text-shadow: 1px 1px 2px 0px #fff;
+  }
+
+  .submitting {
+    text-align: center;
+  }
+
+  .forgot-password {
+    display: inline-block;
+    text-align: left;
+    font-weight: bold;
+    margin-top: 5px;
+    color: #747a7e;
+    font-size: 0.8rem;
+    text-transform: none;
+    font-family: "Source Sans Pro";
+  }
+
+  .auth-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 640px;
+    width: 50%;
+    background: transparent;
+
+    @media only screen and (max-width: 640px) {
+      width: 100%;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 150px;
+      margin: 0;
+      overflow: hidden;
+      padding: 0 2rem;
+      transition: all 470ms cubic-bezier(0.34, 1.25, 0.3, 1);
+      border-bottom: 1px solid #eaeaea;
+      box-shadow: none;
+      background: transparent;
+    }
+
+    .logo {
+      height: 150px;
+    }
+  }
+
+  .form-container {
+    width: 100%;
+  }
+
+  .auth-bg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+      url("../../assets/images/coffee.jpg") no-repeat;
+    background-size: cover;
+    -webkit-transition: 1s opacity;
+    transition: 1s opacity;
+  }
+
+  .horiz-divider {
+    padding: 0 15px;
+    color: #fff;
+  }
+
+  .loading {
+    margin: 10px 0;
+  }
+}
